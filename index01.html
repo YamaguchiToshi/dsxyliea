@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+	<title>ディスレクシア</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/dsxyliea.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+  <body>
+    <div class="container">
+	    <div class="content">
+
+
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-8">
+						<h1>ごんぎつね</h1>
+						<p>
+						　これは、わたしが小さいときに、村の茂兵というおじいさんからきいたお話です。<br>
+						　むかしは、わたしたちの村のちかくの、中山というところに小さなお城があって、中山さまというおとのさまがおられたそうです。<br>
+						　その中山から、すこしはなれた山の中に、「ごんぎつね」というきつねがいました。ごんは、ひとりぼっちの小ぎつねで、しだのいっぱいしげった森の中に穴をほって住んでいました。そして、夜でも昼でも、あたりの村へ出ていって、いたずらばかりしました。畑へ入っていもをほりちらしたり、菜種がらの、ほしてあるのへ火をつけたり、百姓家のうら手につるしてあるとんがらしをむしり取っていったり、いろんなことをしました。<br>
+						　ある秋のことでした。二、三日雨がふりつづいたそのあいだ、ごんは、ほっとして穴からはい出しました。空はからっと晴れていて、もずの声がキンキンひびいていました。<br>
+						　ごんは、村の小川のつつみまで出てきました。あたりのすすきの穂には、まだ雨のしずくが光っていました。川はいつもは水が少ないのですが、三日もの雨で、水がどっとましていました。ただのときは水につかることのない、川べりのすすきやはぎのかぶが、黄色くにごった水に横だおしになって、もまれています。ごんは川下の方へと、ぬかるみ道を歩いていきました。<br>
+						　ふと見ると、川の中に人がいて、何かやっています。ごんは、見つからないように、そうっと草の深いところへ歩きよって、そこからじっとのぞいてみました。<br>
+						「兵十だな。」と、ごんは思いました。兵十はぼろぼろの黒い着物をまくし上げて、腰のところまで水にひたりまがら、魚をとる、はりきりというあみをゆすぶっていました。はちまきをした顔の横っちょうに、まるいはぎの葉が一まい、大きなほくろのようにへばりついていました。<br>
+						　しばらくすると、兵十は、はりきりあみのいちばん後ろの、ふくろのようになったところを、水の中から持ち上げました。その中には、しばの根や、草の葉や、くさった木ぎれなどが、ごちゃごちゃ入っていましたが、でもところどころ、白いものがきらきら光っています。それは、ふというなぎの腹や、大きなきすの腹でした。兵十は、びくの中へ、そのうなぎやきすを、ごみといっしょにぶちこみました。そしてまた、ふくろの口をしばって、水の中に入れました。<br>
+						　兵十は、それから、びくを持って川から上がり、びくを土手においといて、何をさがしにか、川上の方へかけていきました。<br>
+						　兵十がいなくなると、ごんは、ぴょいと草の中からとび出して、びくのそばへかけつけました。ちょいと、いたずらがしたくなったのです。ごんはびくの中の魚をつかみ出しては、はりきりあみのかかっているところより下手の川の中を目がけて、ぽんぽん投げこみました。どの魚も、「とぼん」と音を立てながら、にごった水の中へもぐりこみました。<br>
+						　いちばんしましいに、太いうなぎをつかみにかかりましたが、なにしろぬるぬるとすべりぬけるので、手ではつかめません。ごんはじれったくなって、頭をびくの中につっこんで、うなぎを口にくわえました。うなぎは、キュッといって、ごんの首へまき付きました。そのとたんに兵十が、向こうから、「うわあ、ぬすっとぎつねめ。」と、どなりたてました。ごんは、びっくりしてとび上がりました。うなぎをふりすててにげようとしましたが、うなぎは、ごんの首にまき付いたままはなれません。ごんは、そのまま横っとびにとび出していっしょうけんめいに、にげていきました。<br>
+						　ほら穴の近くの、はんの木の下でふりかえってみましたが、兵十は追っかけては来ませんでした。<br>
+						　ごんは、ほっとして、うなぎの頭をかみくだき、やっとはずして穴の外の、草の葉の上にのさえておきました。
+						</p>
+					</div>
+					<div class="col-2"></div>
+				</div>
+				
+				
+			</div>  
+    </div> <!-- /container -->
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+
+"use strict";
+
+$(function(){
+
+	var getTextNodesIn = function(el) {
+	  return $(el).find(":not(iframe,script)").addBack().contents().filter(function() {
+      return this.nodeType == 3;
+	  });
+	};
+
+	// var textNodes = getTextNodesIn($("p, h1, h2, h3"));
+	var textNodes = getTextNodesIn($("*"));
+
+	function isLetter(char) {
+		return /^[\d]$/.test(char);
+	}
+
+	var wordsInTextNodes = [];
+	for (var i = 0; i < textNodes.length; i++) {
+		var node = textNodes[i];
+
+		var words = [];
+
+		var re = /[\u30a0-\u30ff\u3040-\u309f]+/g;
+		var match;
+
+		while ((match = re.exec(node.nodeValue)) != null) {
+			var word = match[0];
+			var position = match.index;
+			words.push({
+				length: word.length,
+				position: position
+			});
+		}
+		wordsInTextNodes[i] = words;
+	};
+
+
+	function messUpWords () {
+		for (var i = 0; i < textNodes.length; i++) {
+
+			var node = textNodes[i];
+			for (var j = 0; j < wordsInTextNodes[i].length; j++) {
+
+				// Only change a tenth of the words each round.
+				if (Math.random() > 1/10) {
+					continue;
+				}
+
+				var wordMeta = wordsInTextNodes[i][j];
+
+				var word = node.nodeValue.slice(wordMeta.position, wordMeta.position + wordMeta.length);
+				var before = node.nodeValue.slice(0, wordMeta.position);
+				var after  = node.nodeValue.slice(wordMeta.position + wordMeta.length);
+
+				node.nodeValue = before + messUpWord(word) + after;
+			};
+		};
+	}
+
+
+	function messUpWord (word) {
+		if (word.length < 3) {
+			return word;
+		}
+		return word[0] + messUpMessyPart(word.slice(1, -1)) + word[word.length - 1];
+	}
+
+
+	function messUpMessyPart (messyPart) {
+		if (messyPart.length < 2) {
+			return messyPart;
+		}
+		var a, b;
+		while (!(a < b)) {
+			a = getRandomInt(0, messyPart.length - 1);
+			b = getRandomInt(0, messyPart.length - 1);
+		}
+
+		return messyPart.slice(0, a) + messyPart[b] + messyPart.slice(a+1, b) + messyPart[a] + messyPart.slice(b+1);
+	}
+
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+	setInterval(messUpWords, 40);
+});
+
+
+</script>
+
+</body>
+</html>
+
+
